@@ -1,0 +1,55 @@
+# Defaults
+[compare]
+  method = 'idiff'
+  flags = ['-p','-fail 0.001','-failpercent 0.25']
+
+[capture]
+  method = 'gg_record'
+  flags = ['-d debug_font'] # ['-prod','-d ...'] etc.
+
+[capture.env]
+  VGG_STOP_AT_FRAME = '8'
+  VGG_SCREENSHOT_FOLDER = '$OUT_PATH'
+  VGG_SCREENSHOT_FRAMES = '5'
+
+# List of apps to run, capture and/or compare
+
+[[apps]]
+	path = 'examples/calculator_resizable.v'
+
+[[apps]]
+	path = 'examples/demo_canvaslayout.v'
+
+[[apps]]
+	path = 'examples/demo_radio.v'
+
+[[apps]]
+	path = 'examples/demo_row_layout.v'
+
+[[apps]]
+	path = 'examples/demo_scrollview.v'
+
+[[apps]]
+	path = 'examples/demo_textbox.v'
+	[apps.capture.env]
+	  VGG_STOP_AT_FRAME = '50'
+	  VGG_SCREENSHOT_FRAMES = '25' # Currently a little slow to open on some Linux hosts
+
+# The system font list isn't the same across machines - so we leave this out
+# [[apps]]
+#	path = 'examples/demo_text_style.v'
+
+[[apps]]
+	path = 'examples/rgb_color.v'
+
+[[apps]]
+	path = 'examples/users_resizable.v'
+
+[[apps]]
+	path = 'examples/slider_textbox.v'
+
+[[apps]]
+	path = 'examples/switch.v'
+
+[[apps]]
+	path = 'examples/timer.v'
