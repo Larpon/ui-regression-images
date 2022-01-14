@@ -23,8 +23,10 @@
 [[apps]]
 	path = 'examples/demo_radio.v'
 	[apps.capture.env]
-	  VGG_STOP_AT_FRAME = '50'
-	  VGG_SCREENSHOT_FRAMES = '25'
+		VGG_STOP_AT_FRAME = '50'
+		VGG_SCREENSHOT_FRAMES = '25'
+	[apps.compare]
+		flags = ['-p','-fail 0.5','-failpercent 0.25']
 
 [[apps]]
 	path = 'examples/demo_row_layout.v'
